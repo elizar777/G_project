@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from apps.base.models import InfoUser, Skills, MyService, Education, PersentShow, Blogs
-from apps.secondary.models import Secondary, Backend, Desinger, Frontend, Android, Colleagues, Tags, Comments
+from apps.secondary.models import Secondary, Backend, Desinger, Frontend, Android, Colleagues 
 
 # Create your views here.
 def index(request):
@@ -18,10 +18,7 @@ def index(request):
     secondary = Secondary.objects.latest("id")
     return render(request, "index.html", locals())
 
-def blog_details(request):
-    post = Blogs.objects.all()
-    comments = Comments.objects.all()
-    tags = Tags.objects.all()
-    blogs = Blogs.objects.latest("id")
+def blog_details(request, id):
+    blogs = Blogs.objects.get(id=id)
     infouser = InfoUser.objects.latest("id")
     return render(request, "blog-details.html", locals())

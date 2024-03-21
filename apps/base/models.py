@@ -180,28 +180,20 @@ class Blogs(models.Model):
         max_length = 255,
         verbose_name = "Имя вашего блога"    
     )
-    
-    category = models.CharField(
-        max_length = 255,
-        verbose_name = "Категория блога (Tutirial, Tips)"
+
+    description = models.TextField(
+        verbose_name = "Описание"
     )
     
-    update = models.CharField(
-        max_length = 255,
-        verbose_name = "Чего нового"
-    )
-    comments = models.CharField(
-        max_length = 255,
-        verbose_name = "Комментарии"
-    )
     
     image = models.ImageField(
         upload_to = "blogs/",
         verbose_name = "Фото блога" 
     )
     
-    data = models.DateField(
-        verbose_name = "Дата вашего блога"
+    created_at = models.DateField(
+        auto_now_add = True,
+        blank = True, null = True
     )
     
     def __str__(self):

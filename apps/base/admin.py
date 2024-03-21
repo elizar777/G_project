@@ -1,6 +1,5 @@
 from django.contrib import admin
 from apps.base.models import InfoUser, Skills, Education,MyService, PersentShow, Blogs
-
 from django.contrib.auth.models import User, Group
 
 
