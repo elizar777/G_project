@@ -43,34 +43,8 @@ class InfoUser(models.Model):
     
     class Meta:
         verbose_name = "Данные пользователя"
-        verbose_name_plural = "Данные пользователей"
-        
-        
-class Secondary(models.Model):
-    name = models.CharField(
-        max_length = 255,
-        verbose_name = "Имя пользователя"
-    )
-    yearsexper = models.IntegerField(
-        verbose_name = "Опыт работы пользователя"
-    )
-    
-    projectfinish = models.IntegerField(
-        verbose_name = "Проекты завершенный"
-    )
-    
-    happyclients = models.IntegerField(
-        verbose_name = "Счастливые клиенты"
-    )
-    
-    
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = "Доп информации пользователя"
-        verbose_name_plural = "Доп информации пользователей"
-             
+        verbose_name_plural = "Данные пользователя"
+
 
 class MyService(models.Model):
     type_job = models.CharField(
@@ -84,15 +58,15 @@ class MyService(models.Model):
     
     aboutproj = models.CharField(
         max_length = 255,
-        verbose_name = "Коротко как он делает роботу"
+        verbose_name = "Коротко как я делает роботу"
     )
     
     def __str__(self):
         return self.type_job
     
     class Meta:
-        verbose_name = "Сервис пользователя"
-        verbose_name_plural = "Сервисы пользоватлей"
+        verbose_name = "Мои услуги"
+        verbose_name_plural = "Мои услуги"
       
         
 class Skills(models.Model):
@@ -111,14 +85,12 @@ class Skills(models.Model):
         max_length = 255,
         verbose_name = "Где работал"
     )
-    
-    
     def __str__(self):
         return self.typedevelop
     
     class Meta:
-        verbose_name = "Опыт пользователя"
-        verbose_name_plural = "Опыт пользователей"
+        verbose_name = "Мой опыт"
+        verbose_name_plural = "Мой опыт"
         
         
         
@@ -132,77 +104,18 @@ class Education(models.Model):
         max_length = 255, 
         verbose_name = "Где учился"
     )
-    
     course_name = models.CharField(
         max_length = 255,
         verbose_name = "В каком курсе или университе училя"
     )
-
     def __str__(self):
         return self.where_study
-    
     class Meta:
-        verbose_name = "Обучение пользователя"
-        verbose_name_plural = "Обучение пользователей"
+        verbose_name = "Мое оброзование"
+        verbose_name_plural = "Мое оброзование"
+      
 
-            
-         
-   
-   
-class PersentShow(models.Model):
-    name_thing = models.CharField(
-        max_length = 255,
-        verbose_name = "Какие библиотеки или фреймфорки он знает"
-    )
-    
-    persent = models.CharField(
-        max_length = 255,
-        verbose_name = "На сколько процентов знает"
-    )
-    
-    logo = models.ImageField(
-        upload_to= "persent_show/",
-        verbose_name= "Логотип фреймфорка"
-    )
-    
-    
-    def __str__(self):
-        return self.name_thing 
-    
-    class Meta:
-        verbose_name = "Фреймфорки и скилы пользователя"
-        verbose_name_plural = "Фреймфорки и скилы пользователей"
-        
-        
-
-class Blogs(models.Model):
-    name_blog= models.CharField(
-        max_length = 255,
-        verbose_name = "Имя вашего блога"    
-    )
-
-    description = models.TextField(
-        verbose_name = "Описание"
-    )
-    
-    
-    image = models.ImageField(
-        upload_to = "blogs/",
-        verbose_name = "Фото блога" 
-    )
-    
-    created_at = models.DateField(
-        auto_now_add = True,
-        blank = True, null = True
-    )
-    
-    def __str__(self):
-        return self.name_blog 
-    
-    class Meta:
-        verbose_name = "Блоги пользователя"
-        verbose_name_plural = "Блоги пользователей"
-    
+ 
     
    
         

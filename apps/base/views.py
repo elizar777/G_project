@@ -1,14 +1,11 @@
 from django.shortcuts import render
-from apps.base.models import InfoUser, Skills, MyService, Education, PersentShow, Blogs
-from apps.secondary.models import Secondary, Backend, Desinger, Frontend, Android, Colleagues 
+from apps.base.models import InfoUser, Skills, MyService, Education
+from apps.secondary.models import Secondary, Colleagues, Blogs, PersentShow, Projects
 
 # Create your views here.
 def index(request):
+    projects = Projects.objects.all()
     blogs = Blogs.objects.all()
-    backend = Backend.objects.latest("id")
-    frontend = Frontend.objects.latest("id")
-    desinger = Desinger.objects.latest("id")
-    android = Android.objects.latest("id")
     colleagues = Colleagues.objects.all()
     persent = PersentShow.objects.all()
     skills = Skills.objects.all()
